@@ -41,40 +41,11 @@
       background: var(--black);
       color: var(--white);
       overflow-x: hidden;
-      cursor: none;
     }
 
     ::selection { background: var(--green); color: var(--black); }
 
     img, svg { display:block; }
-
-    /* ============================================================
-       CUSTOM CURSOR
-    ============================================================ */
-    #cur-dot {
-      position: fixed; z-index: 99999;
-      width: 8px; height: 8px;
-      background: var(--green);
-      border-radius: 50%;
-      pointer-events: none;
-      transform: translate(-50%,-50%);
-      transition: transform .1s var(--ease);
-      mix-blend-mode: difference;
-    }
-    #cur-ring {
-      position: fixed; z-index: 99998;
-      width: 36px; height: 36px;
-      border: 1px solid var(--green-high);
-      border-radius: 50%;
-      pointer-events: none;
-      transform: translate(-50%,-50%);
-      transition: all .18s var(--ease);
-    }
-    body:has(a:hover) #cur-dot,
-    body:has(button:hover) #cur-dot { transform: translate(-50%,-50%) scale(3); }
-    body:has(a:hover) #cur-ring,
-    body:has(button:hover) #cur-ring { transform: translate(-50%,-50%) scale(.5); opacity:0; }
-    @media (hover:none) { #cur-dot, #cur-ring { display:none; } }
 
     /* ============================================================
        LOADER
@@ -864,9 +835,6 @@
 <body>
 
 <!-- CURSOR -->
-<div id="cur-dot"></div>
-<div id="cur-ring"></div>
-
 <!-- ============================================================
      LOADER
 ============================================================ -->
@@ -1583,24 +1551,6 @@
     setTimeout(() => document.getElementById('loader').classList.add('out'), 1900);
   });
 
-  /* ---- CURSOR ---- */
-  const dot  = document.getElementById('cur-dot');
-  const ring = document.getElementById('cur-ring');
-  let mx = 0, my = 0, rx = 0, ry = 0;
-
-  document.addEventListener('mousemove', e => {
-    mx = e.clientX; my = e.clientY;
-    dot.style.left = mx + 'px';
-    dot.style.top  = my + 'px';
-  });
-
-  (function animRing() {
-    rx += (mx - rx) * .14;
-    ry += (my - ry) * .14;
-    ring.style.left = rx + 'px';
-    ring.style.top  = ry + 'px';
-    requestAnimationFrame(animRing);
-  })();
 
   /* ---- NAVBAR ---- */
   const navbar = document.getElementById('navbar');
