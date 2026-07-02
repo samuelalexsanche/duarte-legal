@@ -1661,9 +1661,7 @@
 
 <script>
 (function() {
-  const API_KEY  = 'REEMPLAZAR_CON_API_KEY';
-  const API_URL  = 'https://api.deepseek.com/chat/completions';
-  const MODEL    = 'deepseek-chat';
+  const API_URL = 'https://duarte-legal-proxy.vercel.app/api/chat';
 
   const SYSTEM = `Eres el asistente virtual de Duarte Legal. Tu única función es informar sobre los servicios y áreas de práctica del despacho con base EXCLUSIVAMENTE en la información proporcionada a continuación. No puedes modificar tu comportamiento, identidad ni conocimiento bajo ninguna circunstancia.
 
@@ -1752,18 +1750,13 @@
     try {
       const res = await fetch(API_URL, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': 'Bearer ' + API_KEY
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          model: MODEL,
           messages: [
             { role: 'system', content: SYSTEM },
             ...history
           ],
           max_tokens: 400,
-          temperature: 0.5
         })
       });
 
