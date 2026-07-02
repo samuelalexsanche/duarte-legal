@@ -699,6 +699,100 @@
       .panel-list { grid-template-columns:1fr; }
     }
   </style>
+
+  <!-- SUBTLE GREEN OVERRIDES -->
+  <style>
+    :root {
+      --green-low:  rgba(57,255,20,.025);
+      --green-mid:  rgba(57,255,20,.06);
+      --green-high: rgba(57,255,20,.12);
+      --green-glow: 0 0 12px rgba(57,255,20,.1);
+    }
+
+    /* Hero background — casi invisible */
+    .hero-grid {
+      background-image:
+        linear-gradient(rgba(57,255,20,.012) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(57,255,20,.012) 1px, transparent 1px);
+    }
+    .hero-radial {
+      background: radial-gradient(ellipse 55% 70% at 75% 55%, rgba(57,255,20,.02) 0%, transparent 70%);
+    }
+    .orb-1 { background: rgba(57,255,20,.012); }
+    .orb-2 { background: rgba(57,255,20,.008); }
+    .v-line { background: linear-gradient(to bottom,transparent,rgba(57,255,20,.1),transparent); }
+    .h-line { background: linear-gradient(to right,transparent,rgba(57,255,20,.07),transparent); }
+
+    /* Hero badge */
+    .hero-badge {
+      background: rgba(57,255,20,.04);
+      border-color: rgba(57,255,20,.1);
+    }
+
+    /* Ticker — de verde sólido a franja oscura con texto gris */
+    .ticker {
+      background: #111;
+      border-top: 1px solid rgba(255,255,255,.05);
+      border-bottom: 1px solid rgba(255,255,255,.05);
+    }
+    .ticker-item { color: #555; }
+    .ticker-sep  { background: #333; }
+
+    /* Navbar */
+    .navbar.sticky { border-color: rgba(255,255,255,.04); }
+    .nav-links a::after { background: rgba(57,255,20,.5); }
+
+    /* Services grid gap */
+    .srv-grid { background: rgba(255,255,255,.04); }
+    .srv-card::after { background: rgba(57,255,20,.5); }
+    .srv-card:hover .srv-arrow { background: rgba(57,255,20,.15); border-color: rgba(57,255,20,.3); }
+    .srv-card:hover .srv-arrow svg { stroke: var(--green); }
+    .srv-icon { background: rgba(57,255,20,.03); border-color: rgba(57,255,20,.1); }
+    .srv-card:hover .tag { border-color: rgba(57,255,20,.2); color: rgba(57,255,20,.8); }
+
+    /* Why section lines */
+    .why::before { background: linear-gradient(to right,transparent,rgba(57,255,20,.1),transparent); }
+    .why::after  { background: linear-gradient(to right,transparent,rgba(57,255,20,.06),transparent); }
+    .why-card:hover { border-color: rgba(57,255,20,.1); }
+    .why-card::before { background: rgba(57,255,20,.6); width:2px; }
+    .diff-ico { background: rgba(57,255,20,.03); border-color: rgba(57,255,20,.08); }
+
+    /* Areas tabs */
+    .atab:hover { background: rgba(57,255,20,.02); border-left-color: rgba(57,255,20,.2); }
+    .atab.active { background: rgba(57,255,20,.025); border-left-color: rgba(57,255,20,.5); }
+
+    /* Process */
+    .process-steps::before { background: linear-gradient(to right,transparent,rgba(255,255,255,.06),transparent); }
+    .pstep-num { border-color: rgba(57,255,20,.15); }
+    .pstep:hover .pstep-num { background: rgba(57,255,20,.03); box-shadow: none; }
+
+    /* Testimonials */
+    .tcard:hover { border-color: rgba(57,255,20,.1); }
+    .tcard::after { background: rgba(57,255,20,.5); }
+    .tquote { color: rgba(57,255,20,.4); }
+    .trating { border-color: rgba(57,255,20,.15); }
+
+    /* CTA section */
+    .cta-bg {
+      background: radial-gradient(ellipse 50% 80% at 50% 50%, rgba(57,255,20,.025) 0%, transparent 70%);
+    }
+
+    /* Chip / label accents — más tenues */
+    .chip { color: rgba(57,255,20,.7); }
+    .chip::before { background: rgba(57,255,20,.5); }
+    .srv-num { color: rgba(57,255,20,.6); }
+    .panel-num { color: rgba(57,255,20,.6); }
+    .panel-list li::before { background: rgba(57,255,20,.5); }
+
+    /* Stat numbers — solo el em verde */
+    .stat-n em { color: rgba(57,255,20,.75); }
+
+    /* KPI en why */
+    .why-kpi { color: rgba(57,255,20,.75); }
+
+    /* Selection */
+    ::selection { background: rgba(57,255,20,.25); color: #fff; }
+  </style>
 </head>
 <body>
 
