@@ -20,10 +20,10 @@
       --dark-2:      #1a1a1a;
       --charcoal:    #2B2B2B;
       --green:       #39FF14;
-      --green-low:   rgba(57,255,20,.06);
-      --green-mid:   rgba(57,255,20,.15);
-      --green-high:  rgba(57,255,20,.4);
-      --green-glow:  0 0 24px rgba(57,255,20,.35), 0 0 8px rgba(57,255,20,.2);
+      --green-low:   rgba(57,255,20,.02);
+      --green-mid:   rgba(57,255,20,.05);
+      --green-high:  rgba(57,255,20,.1);
+      --green-glow:  0 0 8px rgba(57,255,20,.08);
       --white:       #FFFFFF;
       --gray:        #888888;
       --gray-light:  #cccccc;
@@ -152,7 +152,7 @@
       padding:1rem 0;
       background: rgba(0,0,0,.92);
       backdrop-filter: blur(24px);
-      border-color: rgba(57,255,20,.08);
+      border-color: rgba(255,255,255,.04);
     }
     .nav-inner {
       display:flex; align-items:center; justify-content:space-between;
@@ -228,8 +228,8 @@
     .hero-grid {
       position:absolute; inset:0;
       background-image:
-        linear-gradient(rgba(57,255,20,.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(57,255,20,.03) 1px, transparent 1px);
+        linear-gradient(rgba(255,255,255,.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px);
       background-size:64px 64px;
       animation:gridDrift 25s linear infinite;
     }
@@ -241,20 +241,20 @@
     /* Radial accent */
     .hero-radial {
       position:absolute; inset:0;
-      background:radial-gradient(ellipse 55% 70% at 75% 55%, rgba(57,255,20,.055) 0%, transparent 70%);
+      background:radial-gradient(ellipse 55% 70% at 75% 55%, rgba(57,255,20,.015) 0%, transparent 70%);
     }
 
     /* Animated vertical line */
     .v-line {
       position:absolute; right:18%; top:0;
-      width:1px; height:0; background:linear-gradient(to bottom,transparent,rgba(57,255,20,.35),transparent);
+      width:1px; height:0; background:linear-gradient(to bottom,transparent,rgba(255,255,255,.06),transparent);
       animation:vlineGrow 1.8s var(--ease-out) 1s forwards;
     }
     @keyframes vlineGrow { to { height:100%; } }
 
     .h-line {
       position:absolute; left:0; bottom:22%;
-      height:1px; width:0; background:linear-gradient(to right,transparent,rgba(57,255,20,.2),transparent);
+      height:1px; width:0; background:linear-gradient(to right,transparent,rgba(255,255,255,.04),transparent);
       animation:hlineGrow 1.8s var(--ease-out) 1.4s forwards;
     }
     @keyframes hlineGrow { to { width:100%; } }
@@ -264,14 +264,14 @@
       position:absolute; border-radius:50%;
       filter:blur(90px); pointer-events:none;
     }
-    .orb-1 { width:500px; height:500px; background:rgba(57,255,20,.04); top:-150px; right:-150px; }
-    .orb-2 { width:350px; height:350px; background:rgba(57,255,20,.025); bottom:50px; left:20%; }
+    .orb-1 { width:500px; height:500px; background:rgba(57,255,20,.008); top:-150px; right:-150px; }
+    .orb-2 { width:350px; height:350px; background:rgba(57,255,20,.005); bottom:50px; left:20%; }
 
     .hero-body { position:relative; z-index:2; }
 
     .hero-badge {
       display:inline-flex; align-items:center; gap:.6rem;
-      background:rgba(57,255,20,.08); border:1px solid rgba(57,255,20,.22);
+      background:rgba(57,255,20,.03); border:1px solid rgba(57,255,20,.08);
       color:var(--green); font-size:.7rem; font-weight:700;
       letter-spacing:.22em; text-transform:uppercase;
       padding:.45rem 1rem; margin-bottom:2rem;
@@ -334,8 +334,9 @@
        TICKER
     ============================================================ */
     .ticker {
-      background:var(--green); padding:.65rem 0;
+      background:#0f0f0f; padding:.65rem 0;
       overflow:hidden; white-space:nowrap;
+      border-top:1px solid rgba(255,255,255,.04); border-bottom:1px solid rgba(255,255,255,.04);
     }
     .ticker-track {
       display:inline-flex;
@@ -345,9 +346,9 @@
       display:inline-flex; align-items:center; gap:.8rem;
       font-size:.72rem; font-weight:800;
       letter-spacing:.18em; text-transform:uppercase;
-      color:var(--black); padding:0 2rem;
+      color:#444; padding:0 2rem;
     }
-    .ticker-sep { width:5px; height:5px; background:rgba(0,0,0,.3); border-radius:50%; }
+    .ticker-sep { width:5px; height:5px; background:#333; border-radius:50%; }
     @keyframes tickerRun { from{transform:translateX(0)} to{transform:translateX(-50%)} }
 
     /* ============================================================
@@ -385,7 +386,7 @@
 
     .srv-grid {
       display:grid; grid-template-columns:repeat(3,1fr);
-      gap:1px; background:rgba(57,255,20,.1);
+      gap:1px; background:rgba(255,255,255,.04);
     }
     .srv-card {
       background:var(--black); padding:3rem 2.5rem 3.5rem;
@@ -438,11 +439,11 @@
     }
     .why::before {
       content:''; position:absolute; top:0; left:0; right:0;
-      height:1px; background:linear-gradient(to right,transparent,rgba(57,255,20,.25),transparent);
+      height:1px; background:linear-gradient(to right,transparent,rgba(255,255,255,.06),transparent);
     }
     .why::after {
       content:''; position:absolute; bottom:0; left:0; right:0;
-      height:1px; background:linear-gradient(to right,transparent,rgba(57,255,20,.15),transparent);
+      height:1px; background:linear-gradient(to right,transparent,rgba(255,255,255,.04),transparent);
     }
     .why-grid {
       display:grid; grid-template-columns:1fr 1fr; gap:6rem; align-items:center;
@@ -536,12 +537,12 @@
     }
     .process-steps::before {
       content:''; position:absolute; top:32px; left:8%; right:8%;
-      height:1px; background:linear-gradient(to right,transparent,rgba(57,255,20,.25),transparent);
+      height:1px; background:linear-gradient(to right,transparent,rgba(255,255,255,.07),transparent);
     }
     .pstep { padding:0 2rem; }
     .pstep-num {
       width:64px; height:64px;
-      background:var(--black); border:1px solid rgba(57,255,20,.28);
+      background:var(--black); border:1px solid rgba(255,255,255,.08);
       display:flex; align-items:center; justify-content:center;
       margin-bottom:2rem; position:relative; z-index:1;
       transition:background .3s, box-shadow .3s;
@@ -591,7 +592,7 @@
     }
     .cta-radial {
       position:absolute; inset:0;
-      background:radial-gradient(ellipse 50% 80% at 50% 50%, rgba(57,255,20,.06) 0%, transparent 70%);
+      background:radial-gradient(ellipse 50% 80% at 50% 50%, rgba(57,255,20,.015) 0%, transparent 70%);
     }
     .cta-inner { text-align:center; position:relative; z-index:1; max-width:720px; margin:0 auto; }
     .cta-title { margin-bottom:1.5rem; }
@@ -698,100 +699,6 @@
       .hero-actions { flex-direction:column; align-items:flex-start; }
       .panel-list { grid-template-columns:1fr; }
     }
-  </style>
-
-  <!-- SUBTLE GREEN OVERRIDES -->
-  <style>
-    :root {
-      --green-low:  rgba(57,255,20,.025);
-      --green-mid:  rgba(57,255,20,.06);
-      --green-high: rgba(57,255,20,.12);
-      --green-glow: 0 0 12px rgba(57,255,20,.1);
-    }
-
-    /* Hero background — casi invisible */
-    .hero-grid {
-      background-image:
-        linear-gradient(rgba(57,255,20,.012) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(57,255,20,.012) 1px, transparent 1px);
-    }
-    .hero-radial {
-      background: radial-gradient(ellipse 55% 70% at 75% 55%, rgba(57,255,20,.02) 0%, transparent 70%);
-    }
-    .orb-1 { background: rgba(57,255,20,.012); }
-    .orb-2 { background: rgba(57,255,20,.008); }
-    .v-line { background: linear-gradient(to bottom,transparent,rgba(57,255,20,.1),transparent); }
-    .h-line { background: linear-gradient(to right,transparent,rgba(57,255,20,.07),transparent); }
-
-    /* Hero badge */
-    .hero-badge {
-      background: rgba(57,255,20,.04);
-      border-color: rgba(57,255,20,.1);
-    }
-
-    /* Ticker — de verde sólido a franja oscura con texto gris */
-    .ticker {
-      background: #111;
-      border-top: 1px solid rgba(255,255,255,.05);
-      border-bottom: 1px solid rgba(255,255,255,.05);
-    }
-    .ticker-item { color: #555; }
-    .ticker-sep  { background: #333; }
-
-    /* Navbar */
-    .navbar.sticky { border-color: rgba(255,255,255,.04); }
-    .nav-links a::after { background: rgba(57,255,20,.5); }
-
-    /* Services grid gap */
-    .srv-grid { background: rgba(255,255,255,.04); }
-    .srv-card::after { background: rgba(57,255,20,.5); }
-    .srv-card:hover .srv-arrow { background: rgba(57,255,20,.15); border-color: rgba(57,255,20,.3); }
-    .srv-card:hover .srv-arrow svg { stroke: var(--green); }
-    .srv-icon { background: rgba(57,255,20,.03); border-color: rgba(57,255,20,.1); }
-    .srv-card:hover .tag { border-color: rgba(57,255,20,.2); color: rgba(57,255,20,.8); }
-
-    /* Why section lines */
-    .why::before { background: linear-gradient(to right,transparent,rgba(57,255,20,.1),transparent); }
-    .why::after  { background: linear-gradient(to right,transparent,rgba(57,255,20,.06),transparent); }
-    .why-card:hover { border-color: rgba(57,255,20,.1); }
-    .why-card::before { background: rgba(57,255,20,.6); width:2px; }
-    .diff-ico { background: rgba(57,255,20,.03); border-color: rgba(57,255,20,.08); }
-
-    /* Areas tabs */
-    .atab:hover { background: rgba(57,255,20,.02); border-left-color: rgba(57,255,20,.2); }
-    .atab.active { background: rgba(57,255,20,.025); border-left-color: rgba(57,255,20,.5); }
-
-    /* Process */
-    .process-steps::before { background: linear-gradient(to right,transparent,rgba(255,255,255,.06),transparent); }
-    .pstep-num { border-color: rgba(57,255,20,.15); }
-    .pstep:hover .pstep-num { background: rgba(57,255,20,.03); box-shadow: none; }
-
-    /* Testimonials */
-    .tcard:hover { border-color: rgba(57,255,20,.1); }
-    .tcard::after { background: rgba(57,255,20,.5); }
-    .tquote { color: rgba(57,255,20,.4); }
-    .trating { border-color: rgba(57,255,20,.15); }
-
-    /* CTA section */
-    .cta-bg {
-      background: radial-gradient(ellipse 50% 80% at 50% 50%, rgba(57,255,20,.025) 0%, transparent 70%);
-    }
-
-    /* Chip / label accents — más tenues */
-    .chip { color: rgba(57,255,20,.7); }
-    .chip::before { background: rgba(57,255,20,.5); }
-    .srv-num { color: rgba(57,255,20,.6); }
-    .panel-num { color: rgba(57,255,20,.6); }
-    .panel-list li::before { background: rgba(57,255,20,.5); }
-
-    /* Stat numbers — solo el em verde */
-    .stat-n em { color: rgba(57,255,20,.75); }
-
-    /* KPI en why */
-    .why-kpi { color: rgba(57,255,20,.75); }
-
-    /* Selection */
-    ::selection { background: rgba(57,255,20,.25); color: #fff; }
   </style>
 </head>
 <body>
